@@ -5,8 +5,15 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+  1) the allowed attempt and attempt left was different. 
+    - it already assumed that I took one guess.
+  2) the secret key did not match to the range when difficulty is changed
+    - when changing to easy level (range 1-20), secret key is still 28
+  3) the hints were backwards
 
 **Bug Reproduction Log**
 
@@ -14,15 +21,18 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| clicked "new game" | resets history | previous history remains |
+| clicked "new game" | resets score | previous score remains |
+| submit guess | adds to history | it does not go to history sometimes when I continuously guess <- probably a glitch ?
+| guess of 60 | hint : too high | hint : too low | 
+
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+I used Copilot on this project.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
